@@ -25,7 +25,7 @@ Requires:
 The application is only compatible with Linux OSes currently and is built using Go. Root privileges are needed to directly access /dev/input, but any applications executed through keyswitcher launch as the normal user or sudo user.
 
 ```
-git clone $GITHUB_REPO
+git clone https://github.com/rewardian/keyswitcher.git
 
 cd keyswitcher
 
