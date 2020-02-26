@@ -1,0 +1,10 @@
+shortcuts:
+  KEY_S:
+    type: 'text'
+    value: 'Lincoln Hammond\n281-330-8004\nlincoln@acornesque.net\n'
+  KEY_M:
+    type: 'program'
+    value: 'if pgrep spotify > /dev/null; then wmctrl -a Spotify; else /var/lib/snapd/snap/bin/spotify ; fi'
+  KEY_SPACE:
+    type: 'program'
+    value: 'gedit'
