@@ -13,7 +13,7 @@ By default, any keys without an assigned shortcut will have the "Super" and "Shi
 
 In this way, you can assign global hotkeys for applications, accessing those hotkeys easily from the active keyboard while retaining normal use on the primary keyboard.
 
-Secondly, you can assign shortcuts to any key on the activated keyboard (see: [keyswitcher.yaml](#Usage)). Currently you can set "text" and "program" shortcuts, to either output the saved text or to execute the saved script or application.
+Secondly, you can assign shortcuts to any key on the activated keyboard (see: [keyswitcher.yaml](#keyswitcheryaml)). Currently you can set "text" and "program" shortcuts, to either output the saved text or to execute the saved script or application.
 
 ## Installation
 
@@ -58,9 +58,9 @@ Options:
 list		 Display available input devices
 grab		 Gain exclusive control over input device
 load		 Load a specific YAML configuration file [default: $HOME/keyswitcher.yaml]
-release	  Release any activated keyboards
-parse		Print the shortcuts loaded in keyswitcher
-log		  Toggle whether shortcuts, keypresses, or none are logged to stdout
+release	         Release any activated keyboards
+parse		 Print the shortcuts loaded in keyswitcher
+log		 Toggle whether shortcuts, keypresses, or none are logged to stdout
 exit		 Exit
 keyswitcher>
 ```
@@ -88,7 +88,7 @@ There's two things of note here.
 
 1. Devices polled from /dev/input often have names other than what's marketed. For example, my Amazon Basics keyboard is named "CHICONY USB Keyboard"; my Azio HUE is named "HOLDCHIP USB Gaming Keyboard".
 
-  Until we have profiles, you may be best off connecting the keyboard after running ```list``` so to identify which is which.
+   Until we have profiles, you may be best off connecting the keyboard after running ```list``` so to identify which is which.
 
 2. Most keyboards with special buttons (like ```Play/Pause Music```) present two separate devices. Some manufacturers label those devices as a 'consumer control' while others do not; you may need trial and error to ```grab``` the right device (or just grab both!).
 
@@ -103,11 +103,11 @@ The CLI's cursor has updated to the keyboard name and the keyboard is now marked
 If you copied ```keyswitcher.yaml``` into your $HOME directory (during Installation), you can use a few example shortcuts now.
 
 ### keyswitcher.yaml
-By default, we load ``$HOME/keyswitcher.yaml`` on program start.
+By default, ``$HOME/keyswitcher.yaml`` loads on program start.
 
-You can load other files by using ``load keyswitcher_example.yml`` or ``load /opt/file/another_example.yaml``.
+You can load other YAML shortcut files by using ``load keyswitcher_example.yml`` or ``load /opt/file/another_example.yaml``.
 
-The format of any valid YAML file is relatively self-explanatory:
+The format of valid YAML should be relatively self-explanatory:
 ```
 shortcuts:
   KEY_S:
@@ -120,7 +120,7 @@ shortcuts:
     type: 'program'
     value: 'gedit'
 ```
-The list item is identified by the keypress labels (found in [keymaps.go](https://github.com/rewardian/keyswitcher/keymaps.go)).
+Under shortcuts, each list item is identified by keypress labels (found in [keymaps.go](https://github.com/rewardian/keyswitcher/blob/master/keymaps.go)) like 'KEY_SPACE' (Space) or 'KEY_KP0' (Numpad 0).
 
 Under the key, we have two fields, ``Type`` and ``Value``.
 
